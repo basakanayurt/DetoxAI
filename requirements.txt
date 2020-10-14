@@ -7,6 +7,7 @@ regex==2020.7.14
 sentencepiece==0.1.91
 spacy==2.3.2
 scipy==1.4.1
+sklearn
 streamlit
 tensorboard==2.3.0
 tensorboard-plugin-wit==1.7.0
