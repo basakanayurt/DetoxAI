@@ -8,6 +8,7 @@ import tensorflow as tf
 import numpy as np
 from detoxai.data_loader import *
 from detoxai.preprocess import *
+from sklearn.metrics import accuracy_score
 
 
 class Models(LoadData):
