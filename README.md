@@ -7,6 +7,9 @@ This project is developed for Commaful - a multimedia storytelling platform.
 
 One of the biggest challenges of all the social media platforms is toxic content. Some types of toxic content like hatespeech or suicidal idealization can be highly dangerous while some others like spam are less dangerous but still undesired. Currently most of toxic content filtering is done by human moderators which is very time costly considering the vast amount of data that the platforms receive each day. DetoxAI brings AI to the toxic content filtering process to help ease the burden on human moderators. The aim is to decrease the amount of posts to be reviewed by humans by safely eliminating posts that are not toxic in content and flag the ones that possibly have spam, hate speech or self harm in it.
 
+<p align="center"> <img src="/img/goal.png"  width="500"> </p>
+
+
 # Data
 Since there are 3 different classification tasks to be accomplished there are 3 different datasets that are used for training purposes. Spam data is provided by Commaful. However, hate speech and self harm data are curated by using various public sources. To be specific
 
@@ -28,7 +31,7 @@ Since there are 3 different classification tasks to be accomplished there are 3 
 * DistilBERT is fine-tuned for hate speech and self harm classification purposes (Huggingface - https://huggingface.co/transformers/model_doc/distilbert.html)
 * A pre-trained sentiment classifier is used in ensemble with fine-tuned DistilBERT for self harm classification (https://huggingface.co/transformers/main_classes/pipelines.html)
 
-<p align="center"> <img src="/img/pipeline.png"  width="500"> </p>
+<p align="center"> <img src="/img/pipeline.png"  width="600"> </p>
 
 # Setup
 
