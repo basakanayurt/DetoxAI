@@ -28,6 +28,7 @@ Since there are 3 different classification tasks to be accomplished there are 3 
 * DistilBERT is fine-tuned for hate speech and self harm classification purposes (Huggingface - https://huggingface.co/transformers/model_doc/distilbert.html)
 * A pre-trained sentiment classifier is used in ensemble with fine-tuned DistilBERT for self harm classification (https://huggingface.co/transformers/main_classes/pipelines.html)
 
+<p align="center"> <img src="/img/pipeline.png"  width="500"> </p>
 
 # Setup
 
