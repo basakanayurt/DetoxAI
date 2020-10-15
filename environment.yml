@@ -1,4 +1,4 @@
-name: commaful_v1
+name: detoxai
 channels:
   - jmcmurray
   - anaconda
@@ -245,4 +245,4 @@ dependencies:
     - whoosh==2.7.4
     - widgetsnbextension==3.5.1
     - wordcloud==1.8.0
-prefix: /opt/anaconda3/envs/commaful_v1
+prefix: /opt/anaconda3/envs/detoxai
