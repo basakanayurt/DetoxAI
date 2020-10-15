@@ -1,12 +1,19 @@
 # DetoxAI
-Toxic Content Filter
+Undesidered Content Detection
 
 
 # Motivation
+This project is developed for Commaful - a multimedia storytelling platform. 
+
+One of the biggest challenges of all the social media platforms is toxic content. Some types of toxic content like hatespeech or suicidal idealization can be highly dangerous while some others like spam are less dangerous but still undesired. Currently most of toxic content filtering is done by human moderators which is very time costly considering the vast amount of data that the platforms receive each day. DetoxAI brings AI to the toxic content filtering process to help ease the burden on human moderators. The aim is to decrease the amount of posts to be reviewed by humans by safely eliminating posts that are not toxic in content and flag the ones that possibly have spam, hate speech or self harm in it.
 
 # Data
 
+
+
 # Model
+
+
 
 # Setup
 
@@ -24,7 +31,7 @@ Or install the requirements
 ```
 $ pip install -r requirements.txt   
 ```
-### Stream (Optional)
+### Streamlit app (Optional)
 Run the Streamlit app for fun,
 ```
 streamlit run app.py
