@@ -23,9 +23,10 @@ Since there are 3 different classification tasks to be accomplished there are 3 
   * Sentiment140 : http://help.sentiment140.com/for-students
 
 
-
 # Model
-
+* Spam classifier is based on convolutional neural nets (Spacy - https://spacy.io/api/textcategorizer)
+* DistilBERT is fine-tuned for hate speech and self harm classification purposes (Huggingface - https://huggingface.co/transformers/model_doc/distilbert.html)
+* A pre-trained sentiment classifier is used in ensemble with fine-tuned DistilBERT for self harm classification (https://huggingface.co/transformers/main_classes/pipelines.html)
 
 
 # Setup
@@ -35,8 +36,7 @@ Since there are 3 different classification tasks to be accomplished there are 3 
 git clone https://github.com/basakanayurt/DetoxAI
 cd ./DetoxAI
 ```
-
-Optional Create a conda virtual environment with the yml file
+Optional: Create a conda virtual environment with the yml file
 ```
 $ conda env create -f environment.yml
 ```
