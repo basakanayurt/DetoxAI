@@ -33,10 +33,10 @@
         {
 
         "hatespeech": 
-                { "model" : "distilbert", "learning_rate":5e-5 , "batch_size":64, "max_len": 256,"epochs":3, "drop_out":1 } ,
+                { "model" : "distilbert", "learning_rate":5e-5 , "batch_size":64, "max_len": 256,"epochs":3, "drop_out":0.9 } ,
 
         "selfharm": 
-                { "model" : "distilbert", "learning_rate":5e-5 , "batch_size":64, "max_len": 256,"epochs":3, "drop_out":1 },
+                { "model" : "distilbert", "learning_rate":5e-5 , "batch_size":64, "max_len": 256,"epochs":3, "drop_out":0.9 },
 
         "spam": 
                 { "model" : "spacy", "learning_rate":5e-5 , "batch_size":64, "max_len": 256,"epochs":20, "drop_out":0.9 }
