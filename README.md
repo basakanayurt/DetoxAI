@@ -62,7 +62,7 @@ docker build -t detoxai:latest -f DockerFile .
 docker run -p 8501:8501 detoxai:latest
 ```
 
-### Usage
+## Usage
 ```
 from detoxai.content_detector import *
 from detoxai.config import *
@@ -74,9 +74,24 @@ config.update()
 model = AllToxicity()
 model.train()
 model.predict(data="stories", save_file=True)
-
 ```
+Trained models are provided but if preffered each task can be trained and tested on a different dataset. Below is an example for hate speech model:
+```
+config = Config("default")
+task = 'hatespeech'
+config.paths['hatespeech_train_set_path'] = "PATH/TO/TRAIN_SET"
+config.paths['hatespeech_test_set_path'] = '"PATH/TO/TEST_SET"
 
+config.tasks[task]['model'] = 'distilbert'
+config.tasks[task]['learning_rate'] = 5e-5
+config.tasks[task]['max_len'] = 512 #max token length
+config.tasks[task]['epochs'] = 3 
+config.update()
+
+hatespeech_model = Hatespeech()
+hatespeech_model.train()
+hatespeech.predict(data="test_set", save_file=True)
+```
 ## Directory Structure
 ```
 
