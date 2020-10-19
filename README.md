@@ -62,6 +62,20 @@ docker build -t detoxai:latest -f DockerFile .
 docker run -p 8501:8501 detoxai:latest
 ```
 
+### Usage
+```
+from detoxai.content_detector import *
+from detoxai.config import *
+
+config = Config("default")
+config.paths['stories_file_path']='PATH/TO/CSV_FILE/FOR/PREDICTION' 
+config.update()
+
+model = AllToxicity()
+model.train()
+model.predict(data="stories", save_file=True)
+
+```
 
 ## Directory Structure
 ```
