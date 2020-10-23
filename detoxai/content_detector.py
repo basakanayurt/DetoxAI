@@ -40,7 +40,7 @@ class Hatespeech:
     def train(self, train_data=None, num_samples='all', return_model=True):
         if not train_data:
             train_data = LoadData('hatespeech').load_by_name_or_path('train_set', num_samples=num_samples)
-        train_data = check_token_len(train_data, self.max_len)
+        # train_data = check_token_len(train_data, self.max_len)
 
         model = trainX(model_name=self.model,
                        model_path=self.model_path,
@@ -55,7 +55,7 @@ class Hatespeech:
         data_name = data
         if type(data) == str and data in ['train_set', 'test_set','stories']:
             data = LoadData('hatespeech').load_by_name_or_path(data, num_samples=num_samples)
-        data = check_token_len(data, self.max_len)
+        # data = check_token_len(data, self.max_len)
 
         data = predictX(model_name=self.model, data=data, model_path=self.model_path, max_len=self.max_len, step_size=self.prediction_step_size)
         print_cf(data)
@@ -84,7 +84,7 @@ class Selfharm:
     def train(self, train_data=None, num_samples='all', return_model=True):
         if not train_data:
             train_data = LoadData('selfharm').load_by_name_or_path('train_set', num_samples=num_samples)
-        train_data = check_token_len(train_data, self.max_len)
+        # train_data = check_token_len(train_data, self.max_len)
 
         model = trainX(model_name=self.model,
                        model_path=self.model_path,
@@ -100,7 +100,7 @@ class Selfharm:
         data_name = data
         if type(data) == str and data in ['train_set', 'test_set','stories']:
             data = LoadData('selfharm').load_by_name_or_path(data, num_samples=num_samples)
-        data = check_token_len(data, self.max_len)
+        # data = check_token_len(data, self.max_len)
 
         data = predictX(model_name=self.model, data=data, model_path=self.model_path, max_len=self.max_len, step_size=self.prediction_step_size)
 
@@ -145,7 +145,7 @@ class Spam:
     def train(self, train_data=None, num_samples='all', return_model=True):
         if not train_data:
             train_data = LoadData('spam').load_by_name_or_path('train_set', num_samples=num_samples)
-        train_data = check_token_len(train_data, self.max_len)
+        # train_data = check_token_len(train_data, self.max_len)
         model = trainX(model_name=self.model,
                        model_path=self.model_path,
                        train_data=train_data,
@@ -160,7 +160,7 @@ class Spam:
         data_name = data
         if type(data) == str and data in ['train_set', 'test_set','stories']:
             data = LoadData('spam').load_by_name_or_path(data, num_samples=num_samples)
-        data = check_token_len(data, self.max_len)
+        # data = check_token_len(data, self.max_len)
 
         data = predictX(model_name=self.model, data=data, model_path=self.model_path, max_len=self.max_len, step_size=self.prediction_step_size)
 

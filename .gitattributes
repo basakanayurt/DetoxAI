@@ -12,3 +12,5 @@ trained_models/spam/vocab/lookups.bin filter=lfs diff=lfs merge=lfs -text
 trained_models/spam/vocab/strings.json filter=lfs diff=lfs merge=lfs -text
 trained_models/spam/vocab/vectors filter=lfs diff=lfs merge=lfs -text
 trained_models/spam/textcat/cfg filter=lfs diff=lfs merge=lfs -text
+trained_models/hatespeech/* filter=lfs diff=lfs merge=lfs -text
+trained_models/hatespeech filter=lfs diff=lfs merge=lfs -text
