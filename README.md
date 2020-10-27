@@ -43,6 +43,7 @@ cd ./DetoxAI
 Optional: Create a conda virtual environment with the yml file
 ```
 $ conda env create -f environment.yml
+$ conda activate detoxai
 ```
 Or install the requirements
 ```
@@ -63,6 +64,8 @@ docker run -p 8501:8501 detoxai:latest
 ```
 
 ## Usage
+
+Make predictions from the pretrained models
 ```
 from detoxai.content_detector import *
 from detoxai.config import *
@@ -72,15 +75,17 @@ config.paths['stories_file_path']='PATH/TO/CSV_FILE/FOR/PREDICTION'
 config.update()
 
 model = AllToxicity()
-model.train()
 model.predict(data="stories", save_file=True)
 ```
-Trained models are provided but if preffered each task can be trained and tested on a different dataset. Below is an example for hate speech model:
+
+Each classifier (spam, hatespeech, self harm) can be trained from scratch and tested on a different dataset if preferred. Below is an example for training the hate speech classifier:
 ```
 config = Config("default")
 task = 'hatespeech'
 config.paths['hatespeech_train_set_path'] = "PATH/TO/TRAIN_SET"
-config.paths['hatespeech_test_set_path'] = '"PATH/TO/TEST_SET"
+config.paths['hatespeech_test_set_path'] = "PATH/TO/TEST_SET"
+config.paths['hatespeech_test_set_path'] = "PATH/TO/TEST_SET"
+config.paths['trained_models_dir'] =  "PATH/TO/SAVE/THE/NEW/TRAINED/MODEL" # if not changed it would overwrite the existing 'hatespeech' model in the ./trained_models
 
 config.tasks[task]['model'] = 'distilbert'
 config.tasks[task]['learning_rate'] = 5e-5
@@ -92,7 +97,12 @@ hatespeech_model = Hatespeech()
 hatespeech_model.train()
 hatespeech.predict(data="test_set", save_file=True)
 ```
-## Directory Structure
-```
 
-```
+Spam and self harm classifiers can be trained in similar fashion.
+
+### Important Note:
+During the overall content detection (AllToxicity().predict(data="stories", save_file=True)) the algorithm looks for the classifier models in the path provided by "config.paths['trained_models_dir']". This means that the path in "config.paths['trained_models_dir']" should have 3 folders named precisely as "spam", "hatespeech" and "selfharm".
+
+If you retrain the models and save them under different paths do not forget to bring them altogether in a single folder and provide it's path in "config.paths['trained_models_dir']". 
+
+
