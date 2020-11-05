@@ -197,7 +197,7 @@ class AllToxicity:
         data['prediction'] = 0
 
         for index, row in data.iterrows():
-            if data.loc[index,'spam_pred'] == 1 and data.loc[index, 'prediction']>0.55:
+            if data.loc[index,'spam_pred'] == 1 and data.loc[index, 'spam_pred']>0.55:
                 data.loc[index, 'prediction'] = 'spam'
                 data.loc[index, 'probability'] = row['spam_prob']
             elif data.loc[index,'selfharm_pred'] == 1 and data.loc[index,'hatespeech_pred'] == 1:
